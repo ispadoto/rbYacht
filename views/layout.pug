@@ -1,0 +1,131 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    link(rel='stylesheet', type='text/css', href='/assets/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/assets/css/slideshow.css')
+    link(rel='stylesheet', href='/assets/css/main.css')
+    
+    <!--[if lte IE 8]>
+      <script src='assets/js/ie/html5shiv.js'></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+      <link rel='stylesheet' href='assets/css/ie9.css' />
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link rel='stylesheet' href='assets/css/ie8.css' />
+    <![endif]-->
+    
+  body
+    .script
+      script(src='/assets/js/changelang.js')
+    div(id='root')
+      div(id='wrapper')
+        div(id='main')
+          div(class='inner')
+            header(id='header')
+              a(href='/' class='logo')
+                <img src='/images/logo.png' class='image-logo' alt='Logo'/>
+              ul(class='icons')
+                li
+                  a(href='#' class='icon fa-twitter')
+                    span(class='label') Twitter
+                li
+                  a(href='#' class='icon fa-facebook')
+                    span(class='label') Facebook
+                li
+                  a(href='#' class='icon fa-snapchat-ghost')
+                    span(class='label') Snapchat
+                li
+                  a(href='#' class='icon fa-instagram')
+                    span(class='label') Instagram
+                li
+                  a(href='#' class='icon fa-medium')
+                    span(class='label') Medium
+            block content
+        block sidebar
+          div(id='sidebar')
+            div(class='inner')
+              section(id='language')
+                form(method='POST', action='/teste')
+                  i(class='fa fa-language' style='font-size: 1.25em;')   
+                    span( style='font-family: "Roboto Slab", serif; font-size: 100%;')   Choose your language:
+                  select( class='select' id='languages' name='languages' onChange='changeLanguage(this.value)')
+                    each item,key in {'English': 'en-EN', 'Português': 'pt-BR', 'Español': 'es-ES', 'Français': 'fr-FR'}
+                      option(selected=(item == language) value={item}) #{key}
+              nav(id='menu')
+                div(class='major')
+                  h2 Menu
+                  ul
+                    li
+                      a(href='/') Home
+                    li
+                      a(href='/plans/list') List of Plans
+                    li
+                      a(href='/plans/prices') Price List
+                    li
+                      a(href='#') Order Form
+                    li
+                      a(href='#') Articles
+                    li
+                      a(href='#') Letters
+                    li
+                      a(href='#') Forum
+                    li
+                      a(href='#') F.A.Q.
+                    li
+                      a(href='#') Links
+                    li
+                      a(href='#') Shipyards
+                    li
+                      a(href='#') About Us
+              section
+                header(class='major')
+                  h2 Highlights
+                div(class='mini-posts')
+                  article
+                    a(href='#' class='image')
+                      <img src='/images/pic07.jpg' alt='' />
+                    p Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.
+                  ul(class='actions')
+                    li
+                      a(href='#' class='button') More
+              section
+                header(class='major')
+                  h2 Sign up to our newsletter
+                form
+                  div(class='row uniform')
+                    div(class='12u$')
+                      input(type='text' name='demo-name' id='demo-name' value='' placeholder='Name')
+                  div(class='row uniform')
+                    div(class='12u$')
+                      input(type='email' name='demo-email' id='demo-email' value='' placeholder='Email')
+                  div(class='row uniform')
+                    div(class='12u$')
+                      ul(class='actions')
+                        li
+                          input(type='submit' value='Sign up' class='special')
+              section
+                header(class='major')
+                  h2 Get in touch
+                p We are always available to answer your questions, we would be happy to receive a message or a phone call.
+                p Feel free to contact us.
+                ul(class='contact')
+                  li(class='fa-envelope-o')
+                    a(href='mailto:info@yachtdesign.com.au') info@yachtdesign.com.au
+                  li(class='fa-phone') +61 0 8 9317.2560
+                  li(class='fa-home') Perth - Western Australia
+              section
+                footer(id='footer')
+                  p(class='copyright') &copy; B & G Yacht Design. All rights reserved. 
+                  br
+                  a(href='http://www.webappbrasil.com.br') Developed by: WebApp Brasil. 
+                  br
+                  a(href='https://html5up.net') Design: HTML5 UP.
+    script(src='/assets/js/jquery.min.js')
+    script(src='/assets/js/skel.min.js')
+    script(src='/assets/js/util.js')
+    <!--[if lte IE 8]>script(src='assets/js/ie/respond.min.js')<![endif]-->
+    script(src='/assets/js/main.js')
